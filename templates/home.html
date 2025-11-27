@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Contactos</title>
+</head>
+<body>
+    <h1>Mini Contactos</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+
+    <hr>
+
+    <h2>Mensajes Guardados</h2>
+    <ul>
+        {% for c in contactos %}
+            <li><strong>{{ c.nombre }}</strong> — {{ c.email }}<br>{{ c.mensaje }}</li>
+        {% empty %}
+            <p>No hay contactos aún.</p>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
