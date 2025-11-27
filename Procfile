@@ -1,1 +1,1 @@
-web: gunicorn miniweb.wsgi:application
+web: gunicorn miniweb.wsgi
